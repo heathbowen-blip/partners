@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title id="pageTitle">Michelle's Free Class | F45 Training</title>
+<title>Michelle's Free Class | F45 Training</title>
 <meta name="description" content="F45 regional director Michelle is giving you a free class at Santan Village, The Pecans of Queen Creek, Chandler North or Uptown Phoenix. Use code MICHELLER at checkout.">
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,9 @@ a{color:var(--navy)}
 .top{background:#FFFFFF;border-bottom:3px solid var(--red)}
 .top .wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding-block:22px}
 .top .studio-tag{font-family:var(--display-font);font-weight:400;font-size:1.3rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);text-align:center}
+.locations{display:grid;gap:14px 28px;margin:0}
+.locations .loc strong{display:block;color:#fff;font-size:.95rem}
+.locations address{font-style:normal;color:#D7D2EA;margin:4px 0 0;font-size:.92rem}
 .top .f45logo{height:76px;width:auto}
 .hero{position:relative;overflow:hidden;isolation:isolate;border-radius:20px;padding:44px 22px;min-height:420px;display:flex;align-items:center;margin-top:24px}
 .hero-video{position:absolute;inset:0;overflow:hidden;z-index:0;background:var(--navy)}
@@ -76,7 +79,8 @@ h2.sec{margin:0 0 6px;font-family:var(--display-font);font-weight:400;font-size:
 @media (min-width:760px){
   .hero{min-height:480px;padding:56px 40px}
   .steps{grid-template-columns:1fr 1fr}
-  .band .wrap{grid-template-columns:auto 1fr;align-items:center;gap:32px}
+  .band .wrap{grid-template-columns:auto 1fr;align-items:start;gap:32px}
+  .locations{grid-template-columns:1fr 1fr}
   .fine{grid-column:1/-1}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
@@ -101,7 +105,7 @@ h2.sec{margin:0 0 6px;font-family:var(--display-font);font-weight:400;font-size:
 <path d="M107.164 67.7692V56.2308H109.71L113.759 62.3297V56.2308H116.459V67.7692H114.083L109.864 61.4396V67.7692H107.164Z" fill="#211551"/>
 <path d="M127.725 68C124.66 68 122.382 65.5275 122.382 62.033V62C122.382 58.6374 124.632 56 127.669 56C129.399 56 130.622 56.6099 131.663 57.6648L130.059 59.9396C129.356 59.2473 128.667 58.8516 127.683 58.8516C126.263 58.8516 125.166 60.2363 125.166 62V62.033C125.166 63.9121 126.277 65.2473 127.838 65.2473C128.513 65.2473 129.019 65.0824 129.413 64.7692V63.3681H127.486V61.0275H132V66.2033C130.959 67.2253 129.525 68 127.725 68Z" fill="#211551"/>
 </svg>
-    <span class="studio-tag" id="studioTag">Regional &middot; 4 Valley Studios</span>
+    <span class="studio-tag">Regional &middot; 4 Valley Studios</span>
   </div>
 </header>
 
@@ -166,56 +170,68 @@ h2.sec{margin:0 0 6px;font-family:var(--display-font);font-weight:400;font-size:
 <path d="M132.851 27.9809V31.0937L163 31.2798V27.9809H132.851Z" fill="#D6001C"/>
 <path d="M81.9508 21.5531H71.6785L82.0398 14.8088L81.9508 21.5531ZM125.576 28.7412C125.388 24.6612 123.115 21.4624 118.769 21.4608H102.564V16.0781H125.596V7.85773H94.0475V21.5531H90.4193L90.4336 7.85932H79.9816L57.8511 21.5531H46.6991V16.0781H59.8696L73.3598 7.85773H38.3467V42.1614H46.6975V29.7655H58.3442V29.7735H82.0398V42.1423H90.5084V29.7735H117.228V33.3222H94.1223V42.1407H118.769C123.231 42.1407 125.587 38.7335 125.587 34.547L125.576 28.7396V28.7412ZM30.4874 0V49.9873H54.5585V37.6296H74.1821V50H118.771C127.274 50 133.446 43.4991 133.446 34.5406L133.456 0H30.4874ZM129.145 4.30903V19.6284H124.592C127.258 21.4481 128.938 24.6071 129.121 28.5773L129.124 28.6553L129.135 34.5406C129.135 41.1099 124.871 45.691 118.769 45.691H78.4895V33.3206H54.9688V33.3158H50.2494V45.7117H34.7948V4.30903H129.146H129.145Z" fill="white"/>
 </svg></div>
-    <address>
-      <strong id="footerStudioName">F45 Training Santan Village</strong><br>
-      <span id="footerAddress">2810 S Market St Ste. 101, Gilbert, AZ 85295</span><br>
-      <a id="footerPhone" href="tel:+14807163590">(480) 716-3590</a> &middot; <a id="footerEmail" href="mailto:santanvillage@f45training.com">santanvillage@f45training.com</a>
-    </address>
-    <p class="fine">Good for one complimentary drop-in class at <span id="fineStudio1">F45 Training Santan Village</span>. One use per person. A card on file and a signed waiver are required to book. Terms are set by <span id="fineStudio2">F45 Training Santan Village</span>.</p>
+    <div class="locations">
+      <div class="loc">
+        <strong>F45 Training Santan Village</strong>
+        <address>2810 S Market St Ste. 101, Gilbert, AZ 85295<br>
+          <a href="tel:+14807163590">(480) 716-3590</a> &middot; <a href="mailto:santanvillage@f45training.com">santanvillage@f45training.com</a>
+        </address>
+      </div>
+      <div class="loc">
+        <strong>F45 Training The Pecans of Queen Creek</strong>
+        <address>24750 S Ellsworth Rd Ste a103, Queen Creek, AZ 85142<br>
+          <a href="tel:+16028093876">(602) 809-3876</a> &middot; <a href="mailto:thepecansofqueencreek@f45training.com">thepecansofqueencreek@f45training.com</a>
+        </address>
+      </div>
+      <div class="loc">
+        <strong>F45 Training Chandler North</strong>
+        <address>1949 W Ray Rd Unit 33, Chandler, AZ 85224<br>
+          <a href="tel:+14807162682">(480) 716-2682</a> &middot; <a href="mailto:chandlernorth@f45training.com">chandlernorth@f45training.com</a>
+        </address>
+      </div>
+      <div class="loc">
+        <strong>F45 Training Uptown Phoenix</strong>
+        <address>6210 N 7th St, Phoenix, AZ 85012<br>
+          <a href="tel:+16029223535">(602) 922-3535</a> &middot; <a href="mailto:uptownphoenix@f45training.com">uptownphoenix@f45training.com</a>
+        </address>
+      </div>
+    </div>
+    <p class="fine">Good for one complimentary drop-in class at any one F45 Training studio listed above. One use per person. A card on file and a signed waiver are required to book. Terms are set by the F45 Training studio where you redeem.</p>
   </div>
 </footer>
 
 <script>
 (function(){
   var STUDIOS = [
-    {key:"santanvillage", name:"Santan Village", dropin:"https://f45training.com/studio/santanvillage/dropin", address:"2810 S Market St Ste. 101, Gilbert, AZ 85295", phoneDigits:"4807163590", phoneFormatted:"(480) 716-3590", email:"santanvillage@f45training.com"},
-    {key:"thepecansofqueencreek", name:"The Pecans of Queen Creek", dropin:"https://f45training.com/studio/thepecansofqueencreek/dropin", address:"24750 S Ellsworth Rd Ste a103, Queen Creek, AZ 85142", phoneDigits:"6028093876", phoneFormatted:"(602) 809-3876", email:"thepecansofqueencreek@f45training.com"},
-    {key:"chandlernorth", name:"Chandler North", dropin:"https://f45training.com/studio/chandlernorth/dropin", address:"1949 W Ray Rd Unit 33, Chandler, AZ 85224", phoneDigits:"4807162682", phoneFormatted:"(480) 716-2682", email:"chandlernorth@f45training.com"},
-    {key:"uptownphoenix", name:"Uptown Phoenix", dropin:"https://f45training.com/studio/uptownphoenix/dropin", address:"6210 N 7th St, Phoenix, AZ 85012", phoneDigits:"6029223535", phoneFormatted:"(602) 922-3535", email:"uptownphoenix@f45training.com"}
+    {key:"santanvillage", dropin:"https://f45training.com/studio/santanvillage/dropin"},
+    {key:"thepecansofqueencreek", dropin:"https://f45training.com/studio/thepecansofqueencreek/dropin"},
+    {key:"chandlernorth", dropin:"https://f45training.com/studio/chandlernorth/dropin"},
+    {key:"uptownphoenix", dropin:"https://f45training.com/studio/uptownphoenix/dropin"}
   ];
 
   var picker = document.getElementById("studioPicker");
+  var claimBtn = document.getElementById("claimBtn");
+  var buttons = picker.querySelectorAll("button[data-key]");
 
-  function render(studio){
-    var buttons = picker.querySelectorAll("button");
+  function select(studio){
     for (var i=0;i<buttons.length;i++){
       buttons[i].classList.toggle("active", buttons[i].getAttribute("data-key")===studio.key);
     }
-    document.getElementById("studioTag").textContent = studio.name;
-    document.getElementById("pageTitle").textContent = "Michelle's Free Class | F45 Training " + studio.name;
-    document.getElementById("claimBtn").href = studio.dropin;
-    document.getElementById("footerStudioName").textContent = "F45 Training " + studio.name;
-    document.getElementById("footerAddress").textContent = studio.address;
-    var phoneEl = document.getElementById("footerPhone");
-    phoneEl.href = "tel:+1" + studio.phoneDigits;
-    phoneEl.textContent = studio.phoneFormatted;
-    var emailEl = document.getElementById("footerEmail");
-    emailEl.href = "mailto:" + studio.email;
-    emailEl.textContent = studio.email;
-    document.getElementById("fineStudio1").textContent = "F45 Training " + studio.name;
-    document.getElementById("fineStudio2").textContent = "F45 Training " + studio.name;
+    claimBtn.href = studio.dropin;
   }
 
-  picker.addEventListener("click", function(e){
-    var btn = e.target.closest("button[data-key]");
-    if (!btn) return;
-    var key = btn.getAttribute("data-key");
-    for (var i=0;i<STUDIOS.length;i++){
-      if (STUDIOS[i].key === key){ render(STUDIOS[i]); break; }
-    }
-  });
+  for (var i=0;i<buttons.length;i++){
+    buttons[i].addEventListener("click", (function(btn){
+      return function(){
+        var key = btn.getAttribute("data-key");
+        for (var j=0;j<STUDIOS.length;j++){
+          if (STUDIOS[j].key === key){ select(STUDIOS[j]); break; }
+        }
+      };
+    })(buttons[i]));
+  }
 
-  render(STUDIOS[0]);
+  select(STUDIOS[0]);
 })();
 </script>
 <script>
