@@ -10,24 +10,22 @@
 
   This URL (partners.pluultra.com/gilbert-and-the-202/) is what's printed on the
   reusable F45 Gilbert & the 202 "Business of the Month" employee handout and its
-  QR code. It never changes. What it points to DOES change every month.
+  QR code. It never changes. What it points to DOES change every month:
+  update CURRENT_BOTM_PATH below to that month's business-slug folder
+  whenever a new BOTM landing page goes live for this studio, per the
+  f45-botm-landing-page skill. That way the printed handout never needs
+  to be reprinted.
 
-  FALLBACK: F45 Gilbert & the 202 does not yet have a dedicated BOTM landing page
-  on partners.pluultra.com, so this currently redirects to the studio's
-  own F45 Training booking page as a placeholder. As soon as a real BOTM
-  landing page is built for this studio (per the f45-botm-landing-page
-  skill), update CURRENT_BOTM_PATH below to that page's path (e.g.
-  "/some-business-slug/") so this URL points there instead. That way the
-  printed handout never needs to be reprinted.
+  Current BOTM: see CURRENT_BOTM_PATH below.
 -->
 <script>
-  var CURRENT_BOTM_PATH = "https://f45training.com/studio/gilbertandthe202/dropin";
+  var CURRENT_BOTM_PATH = "/unmarked-beauty-and-wellness/";
   location.replace(CURRENT_BOTM_PATH);
 </script>
-<meta http-equiv="refresh" content="0; url=https://f45training.com/studio/gilbertandthe202/dropin">
-<link rel="canonical" href="https://f45training.com/studio/gilbertandthe202/dropin">
+<meta http-equiv="refresh" content="0; url=/unmarked-beauty-and-wellness/">
+<link rel="canonical" href="https://partners.pluultra.com/unmarked-beauty-and-wellness/">
 </head>
 <body>
-<p>Redirecting to <a href="https://f45training.com/studio/gilbertandthe202/dropin">this month's F45 Gilbert & the 202 Business of the Month offer</a>&hellip;</p>
+<p>Redirecting to <a href="/unmarked-beauty-and-wellness/">this month's F45 Gilbert & the 202 Business of the Month offer</a>&hellip;</p>
 </body>
 </html>
