@@ -1,0 +1,13 @@
+{
+  "name": "Rachel's Free Class - F45 Training Parker",
+  "short_name": "F45 Free Class",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#211551",
+  "theme_color": "#211551",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
