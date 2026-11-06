@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A Gift From Heath — Plū Ultra</title>
+<meta name="description" content="A personal invitation from Heath Bowen to try any F45, FS8, or RESET Mind &amp; Body studio — two classes on him, no expiration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/*
+  Layout mirrors Heath's h@pluultra.com email signature: white page, a serif
+  "PLŪ ULTRA" wordmark over a gray "empowering through wellness" tagline, a
+  thin red vertical accent divider, and an "OUR STUDIOS" row of brand marks.
+  Everything below the fold is plain, roomy, and built for one thing: get the
+  code, pick a studio, check out.
+*/
+:root{
+  --ink:#1A1A1A;
+  --gray:#6B6F76;
+  --gray-soft:#9A9DA3;
+  --red:#B3122C;
+  --line:#E9E7E4;
+  --paper:#FFFFFF;
+  --panel:#FAF9F8;
+  --r:12px;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Montserrat,system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-left:max(0px,env(safe-area-inset-left,0px));
+  padding-right:max(0px,env(safe-area-inset-right,0px));
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+
+/* ---------- Header: signature-style wordmark ---------- */
+header.brand{
+  padding:48px 0 28px;
+  text-align:center;
+}
+.wordmark{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:600;
+  font-size:clamp(34px,8vw,46px);
+  letter-spacing:.14em;
+  margin:0;
+}
+.wordmark .u{ text-transform:uppercase }
+.tagline{
+  margin:8px 0 0;
+  color:var(--gray);
+  font-size:12.5px;
+  font-weight:500;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+.divider{
+  width:2px;
+  height:30px;
+  background:var(--red);
+  margin:20px auto 0;
+  border-radius:2px;
+}
+
+/* ---------- Hero / personal invitation ---------- */
+.hero{ padding:12px 0 8px; text-align:center }
+.eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--red); margin:0 0 14px;
+}
+h1{
+  font-size:clamp(28px,6vw,38px);
+  line-height:1.25;
+  font-weight:600;
+  letter-spacing:-.01em;
+  margin:0 0 16px;
+  text-wrap:balance;
+}
+.lede{
+  color:var(--gray);
+  font-size:16px;
+  max-width:540px;
+  margin:0 auto 6px;
+}
+.signed{
+  margin:22px 0 0;
+  font-family:"Cormorant Garamond",serif;
+  font-style:italic;
+  font-size:20px;
+  color:var(--ink);
+}
+
+/* ---------- Promo code card ---------- */
+.code-card{
+  margin:32px 0 40px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:26px 24px;
+  text-align:center;
+}
+.code-label{
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gray); margin:0 0 12px;
+}
+.code-row{
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+.code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:clamp(22px,5vw,28px);
+  font-weight:700;
+  letter-spacing:.05em;
+  padding:10px 18px;
+  border:1.5px dashed var(--red);
+  border-radius:10px;
+  background:var(--paper);
+}
+.copy-btn{
+  appearance:none;border:1.5px solid var(--ink);background:var(--ink);color:#fff;
+  font-family:inherit;font-weight:600;font-size:14px;letter-spacing:.03em;
+  padding:12px 20px;border-radius:999px;cursor:pointer;transition:opacity .15s ease;
+}
+.copy-btn:hover{opacity:.85}
+.copy-btn[data-copied="true"]{background:var(--red);border-color:var(--red)}
+.code-fine{
+  margin:16px 0 0;color:var(--gray-soft);font-size:12.5px;
+}
+
+/* ---------- Studios section ---------- */
+.studios-head{ text-align:center; padding:8px 0 6px }
+.studios-eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ink); margin:0;
+}
+.studios-eyebrow::after{
+  content:"";display:block;width:36px;height:2px;background:var(--red);
+  margin:14px auto 0;
+}
+
+.brand-block{ margin:36px 0 0 }
+.brand-head{
+  display:flex;align-items:baseline;gap:10px;margin:0 0 14px;
+  border-bottom:1px solid var(--line); padding-bottom:10px;
+}
+.brand-mark{
+  font-weight:800;font-size:17px;letter-spacing:.02em;
+}
+.brand-sub{ color:var(--gray);font-size:13px;font-weight:500 }
+
+.studio-grid{
+  display:grid;grid-template-columns:1fr;gap:10px;
+}
+.studio-card{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px 18px;
+  border:1px solid var(--line);border-radius:var(--r);
+  background:var(--paper);
+}
+.studio-name{ font-weight:600;font-size:15px }
+.claim-btn{
+  flex:none;
+  display:inline-block;text-decoration:none;
+  font-weight:600;font-size:13.5px;letter-spacing:.02em;
+  padding:10px 18px;border-radius:999px;
+  background:var(--ink);color:#fff;
+  white-space:nowrap;
+}
+.claim-btn:hover{ background:var(--red) }
+
+/* ---------- How it works ---------- */
+.steps{
+  margin:44px 0 0;padding:26px 24px;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--panel);
+}
+.steps h2{
+  margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+}
+.steps ol{ margin:0;padding-left:20px;color:var(--gray);font-size:14.5px }
+.steps li{ margin:0 0 8px }
+.steps li:last-child{ margin:0 }
+
+/* ---------- Footer ---------- */
+footer{
+  margin:52px 0 40px;padding-top:28px;border-top:1px solid var(--line);
+  text-align:center;color:var(--gray-soft);font-size:12px;line-height:1.7;
+}
+footer .pu{ font-weight:700;color:var(--gray) }
+
+@media (max-width:480px){
+  .code-row{flex-direction:column}
+  .studio-card{flex-direction:row}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="brand">
+    <p class="wordmark"><span class="u">Plū Ultra</span></p>
+    <p class="tagline">Empowering Through Wellness</p>
+    <div class="divider"></div>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">A Personal Invitation</p>
+    <h1>Come try the studios I've built, on me.</h1>
+    <p class="lede">
+      Across F45, FS8, and RESET Mind &amp; Body, every studio in the Plū Ultra
+      family is open to you — two classes, any location, no strings and no
+      expiration. Pick the one closest to you below and I'll see you in there.
+    </p>
+    <p class="signed">— Heath</p>
+  </section>
+
+  <div class="code-card">
+    <p class="code-label">Your Code</p>
+    <div class="code-row">
+      <span class="code" id="promo-code">FRIENDOFHEATH</span>
+      <button class="copy-btn" id="copy-btn" type="button">Copy Code</button>
+    </div>
+    <p class="code-fine">Good for 2 classes per person · no expiration · enter at checkout</p>
+  </div>
+
+  <div class="studios-head">
+    <p class="studios-eyebrow">Our Studios</p>
+  </div>
+
+  <!-- F45 -->
+  <section class="brand-block">
+    <div class="brand-head">
+      <span class="brand-mark">F45 TRAINING</span>
+      <span class="brand-sub">Team training, 45 minutes, every day different</span>
+    </div>
+    <div class="studio-grid">
+      <div class="studio-card"><span class="studio-name">Santan Village</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=437452&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Chandler North</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=881225&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Golden Triangle</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5720792&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Uptown Phoenix</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5721505&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Belmar</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5727346&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Parker</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5722147&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Uptown Denver</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=506102&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">West Highland</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=731775&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">North Thornton</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=405686&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">The Pecans of Queen Creek</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5725975&amp;stype=43&amp;prodid=100008" target="_blank" rel="noopener">Claim your class</a></div>
+    </div>
+  </section>
+
+  <!-- FS8 -->
+  <section class="brand-block">
+    <div class="brand-head">
+      <span class="brand-mark">FS8</span>
+      <span class="brand-sub">Pilates · Tone · Yoga</span>
+    </div>
+    <div class="studio-grid">
+      <div class="studio-card"><span class="studio-name">Downtown Tempe</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5748407&amp;stype=43&amp;prodid=500035" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">LoHi</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5740143&amp;stype=43&amp;prodid=500035" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Parker Road Centennial</span><a class="claim-btn" href="https://clients.mindbodyonline.com/classic/ws?studioid=5748584&amp;stype=43&amp;prodid=500035" target="_blank" rel="noopener">Claim your class</a></div>
+    </div>
+  </section>
+
+  <!-- RESET Mind & Body -->
+  <section class="brand-block">
+    <div class="brand-head">
+      <span class="brand-mark">RESET MIND &amp; BODY</span>
+      <span class="brand-sub">Recovery &amp; wellness</span>
+    </div>
+    <div class="studio-grid">
+      <div class="studio-card"><span class="studio-name">Uptown Phoenix</span><a class="claim-btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kK6JDuhDWphrDZNb/po_11kK6JDuhDWphMPwsN?mbo_src=po-edit-page" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">Old Town Scottsdale</span><a class="claim-btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kNLB16un3poyGaCX/po_11kNLB16un3poUQmkW?mbo_src=po-edit-page" target="_blank" rel="noopener">Claim your class</a></div>
+      <div class="studio-card"><span class="studio-name">LoHi</span><a class="claim-btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kQ5KFSDtvVotQShF/po_11kQ5KFSDtvVoPXTTc?mbo_src=po-edit-page" target="_blank" rel="noopener">Claim your class</a></div>
+    </div>
+  </section>
+
+  <div class="steps">
+    <h2>How It Works</h2>
+    <ol>
+      <li>Pick your studio above and tap "Claim your class" — it opens that studio's booking page.</li>
+      <li>Check out with your name and contact details.</li>
+      <li>Enter code <strong>FRIENDOFHEATH</strong> at the payment step for $0.00.</li>
+    </ol>
+  </div>
+
+  <footer>
+    <span class="pu">PLŪ ULTRA</span> · Empowering Through Wellness<br>
+    A personal invitation from Heath Bowen — not a general promotion, so please don't share this page publicly.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('copy-btn');
+  var code = document.getElementById('promo-code');
+  if(!btn || !code) return;
+  btn.addEventListener('click', function(){
+    var text = code.textContent.trim();
+    function done(){
+      btn.textContent = 'Copied!';
+      btn.setAttribute('data-copied','true');
+      setTimeout(function(){
+        btn.textContent = 'Copy Code';
+        btn.removeAttribute('data-copied');
+      }, 1800);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){
+        fallbackCopy(text, done);
+      });
+    } else {
+      fallbackCopy(text, done);
+    }
+  });
+  function fallbackCopy(text, cb){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+    cb();
+  }
+})();
+</script>
+</body>
+</html>
