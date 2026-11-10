@@ -133,6 +133,15 @@ h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; let
 address { font-style: normal; color: var(--mute); font-size: 15px; }
 .phone { color: var(--mute); font-size: 15px; font-variant-numeric: tabular-nums; margin: 0 0 20px; }
 .studio .btn { align-self: flex-start; }
+.after { margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: var(--mute); }
+.after b { color: var(--ink); font-weight: 600; letter-spacing: .12em; }
+.code-cell .code-box { align-self: flex-start; margin-top: 8px; }
+.how { list-style: none; counter-reset: h; margin: 0 0 40px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; border-top: 2px solid var(--ink); }
+.how li { counter-increment: h; display: flex; flex-direction: column; gap: 6px; padding-top: 20px; }
+.how li::before { content: counter(h); font-family: var(--font-display); font-weight: 600; font-size: 2rem; line-height: 1; color: var(--ink); }
+.how b { font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+.how span { font-size: 15px; color: var(--mute); }
+.how em { font-style: normal; font-weight: 600; color: var(--ink); letter-spacing: .12em; }
 
 /* modalities */
 .mods { list-style: none; margin: 0; padding: 0; }
@@ -158,10 +167,13 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
   .mods .dur { text-align: left; }
 }
 @media (max-width: 900px) {
+  .how { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
   .studios { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
 }
 @media (max-width: 640px) {
   .studios { grid-template-columns: minmax(0, 1fr); }
+  .how { grid-template-columns: minmax(0, 1fr); }
+  .how li { padding-bottom: 8px; }
   .code-box { width: 100%; justify-content: space-between; padding-left: 16px; }
   .code-label { display: none; }
   .tag { font-size: 10px; letter-spacing: .16em; }
@@ -203,6 +215,12 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
         <h2>Book your free drop-in</h2>
         <p class="hours"><b>Hours, all studios:</b> Mon&ndash;Fri 6 AM&ndash;1 PM and 3&ndash;8 PM &middot; Sat&ndash;Sun 9 AM&ndash;4 PM</p>
       </div>
+      <ol class="how" aria-label="How to claim your free drop-in">
+        <li><b>Choose your studio</b><span>Tap that studio&rsquo;s Book button below. It opens the Drop-In page on RESET&rsquo;s booking site.</span></li>
+        <li><b>Tap Continue</b><span>Sign in, or create a free account with your email.</span></li>
+        <li><b>Enter code MAUI</b><span>Type <em>MAUI</em> in the promo code box at checkout. Your total drops to $0.</span></li>
+        <li><b>Finish and book</b><span>Complete checkout, then reserve your class time. Arrive a few minutes early.</span></li>
+      </ol>
       <div class="studios">
         <article class="studio">
           <p class="city">Gilbert, AZ</p>
@@ -210,6 +228,7 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
           <address>2811 S Market St #101<br>Gilbert, AZ 85295</address>
           <p class="phone">(602) 560-7170</p>
           <a class="btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kST4k91NisJW7g45/po_11kST4k91NisJ1D5Xj?mbo_src=" target="_blank" rel="noopener">Book at Santan Village <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <p class="after">Then tap Continue and enter code <b>MAUI</b> at checkout.</p>
         </article>
         <article class="studio">
           <p class="city">Phoenix, AZ</p>
@@ -217,6 +236,7 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
           <address>6202 N 7th St<br>Phoenix, AZ 85014</address>
           <p class="phone">(602) 962-5217</p>
           <a class="btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kK6JDuhDWphrDZNb/po_11kK6JDuhDWphMPwsN?mbo_src=" target="_blank" rel="noopener">Book at Uptown <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <p class="after">Then tap Continue and enter code <b>MAUI</b> at checkout.</p>
         </article>
         <article class="studio">
           <p class="city">Scottsdale, AZ</p>
@@ -224,6 +244,7 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
           <address>2515 N Scottsdale Rd, Suite 108<br>Scottsdale, AZ 85257</address>
           <p class="phone">(480) 809-6836</p>
           <a class="btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kNLB16un3poyGaCX/po_11kNLB16un3poUQmkW?mbo_src=" target="_blank" rel="noopener">Book at Old Town <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <p class="after">Then tap Continue and enter code <b>MAUI</b> at checkout.</p>
         </article>
         <article class="studio">
           <p class="city">Lakewood, CO</p>
@@ -231,6 +252,7 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
           <address>7349 W Alaska Dr, Suite B<br>Lakewood, CO 80226</address>
           <p class="phone">(720) 807-3794</p>
           <a class="btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kNq9HsyXEJ6dfuch/po_11kNq9HsyXEJ68oq6t?mbo_src=" target="_blank" rel="noopener">Book at Belmar <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <p class="after">Then tap Continue and enter code <b>MAUI</b> at checkout.</p>
         </article>
         <article class="studio">
           <p class="city">Denver, CO</p>
@@ -238,15 +260,16 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
           <address>3106 Zuni St<br>Denver, CO 80211</address>
           <p class="phone">(720) 780-9538</p>
           <a class="btn" href="https://go.mindbodyonline.com/book/app/pricing/bus_11kQ5KFSDtvVotQShF/po_11kQ5KFSDtvVoPXTTc?mbo_src=" target="_blank" rel="noopener">Book at LoHi <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <p class="after">Then tap Continue and enter code <b>MAUI</b> at checkout.</p>
         </article>
-        <article class="studio">
-          <p class="city">How to claim</p>
+        <article class="studio code-cell">
+          <p class="city">Your promo code</p>
           <h3>Drop-in on Tim</h3>
-          <ol class="steps">
-            <li><span>Pick a studio and book a drop-in.</span></li>
-            <li><span>Enter code <b>MAUI</b> at checkout.</span></li>
-            <li><span>Your drop-in total comes to $0.</span></li>
-          </ol>
+          <div class="code-box">
+            <span class="code-val" data-code>MAUI</span>
+            <button class="copy" type="button" data-copy aria-label="Copy code MAUI">Copy</button>
+          </div>
+          <p class="after">Use this code at checkout at any of the five studios.</p>
         </article>
       </div>
     </section>
@@ -293,17 +316,18 @@ footer .logo { width: 56px; height: auto; margin-bottom: 20px; }
 </div>
 <script>
 (function () {
-  var btn = document.getElementById('copy'), code = document.getElementById('code');
-  if (!btn || !code) return;
-  function done(t) { btn.textContent = t; setTimeout(function () { btn.textContent = 'Copy'; }, 1800); }
-  function select() {
-    try { var r = document.createRange(); r.selectNodeContents(code); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {}
-  }
-  btn.addEventListener('click', function () {
-    var p;
-    try { p = navigator.clipboard && navigator.clipboard.writeText('MAUI'); } catch (e) { p = null; }
-    if (p && p.then) { p.then(function () { done('Copied'); }, function () { select(); done('Selected'); }); }
-    else { select(); done('Selected'); }
+  document.querySelectorAll('[data-copy], #copy').forEach(function (btn) {
+    var code = btn.parentNode.querySelector('.code-val');
+    function done(t) { btn.textContent = t; setTimeout(function () { btn.textContent = 'Copy'; }, 1800); }
+    function select() {
+      try { var r = document.createRange(); r.selectNodeContents(code); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) {}
+    }
+    btn.addEventListener('click', function () {
+      var p;
+      try { p = navigator.clipboard && navigator.clipboard.writeText('MAUI'); } catch (e) { p = null; }
+      if (p && p.then) { p.then(function () { done('Copied'); }, function () { select(); done('Selected'); }); }
+      else { select(); done('Selected'); }
+    });
   });
 })();
 </script>
