@@ -70,6 +70,19 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
 .rating span{color:var(--muted);font-size:.92rem}
 .rating u{color:var(--red);font-weight:700;text-decoration:none;font-size:.92rem}
 .hp{position:absolute;left:-9999px}
+
+.strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.strip span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-weight:700;font-size:.85rem;padding:7px 11px;border-radius:999px}
+.hero .manual{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.hero .manual label{display:block;color:#fff;font-size:.85rem;font-weight:700;margin:8px 0 5px}
+.hero .manual input{width:100%;padding:13px;border-radius:9px;border:0;font-size:16px;font-family:var(--font)}
+.hero .err{color:#FFD0D0}
+.where{display:grid;gap:10px}
+.where a,.where div.i{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.where .ic{flex:0 0 38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:18px}
+.where b{display:block}
+.where span{color:var(--muted);font-size:.92rem}
+.hero-video.off #heroYtPlayer{display:none}
 </style>
 </head>
 <body>
@@ -95,14 +108,21 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
 <main class="wrap">
 <div id="main">
   <div class="hero">
-    <div class="hero-video" aria-hidden="true"><div id="heroYtPlayer"></div></div>
+    <div class="hero-video off" id="hv" aria-hidden="true"><div id="heroYtPlayer"></div></div>
     <div class="hero-overlay"></div>
     <div class="hero-in">
       <p class="eyebrow">Midtown members, you're invited</p>
       <h1>Hey <em id="fname">there</em>, your next level starts at Uptown.</h1>
-      <p class="lede">Same great F45 workouts. A bigger community to train with. More class times to fit your schedule. Your spot at F45 Uptown Phoenix is ready, and joining takes one tap.</p>
+      <div class="strip"><span>December free</span><span>Same rate &amp; bill date for 6 months</span><span>Join by Dec 1</span></div>
+      <p class="lede">Same great F45 workouts. A bigger community. More class times to fit your schedule.</p>
+      <div class="manual" id="manual">
+        <label for="name">Your name</label><input id="name" autocomplete="name">
+        <label for="contact">Phone or email</label><input id="contact" autocomplete="tel email">
+        <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
       <button class="cta go" type="button">Count me in</button>
-      <div class="sub">Opt in, then save your card in Mindbody. No charge until January.</div>
+      <div class="err" id="err"></div>
+      <div class="sub">Takes 2 minutes. No charge until January.</div>
     </div>
   </div>
 
@@ -116,45 +136,45 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
   <section>
     <div class="gift">
       <div class="big">Your welcome gift: December is on us.</div>
-      <p>Join Uptown by <strong>December 1</strong> and we skip your December payment.</p>
+      <p>Join by <strong>December 1</strong> and we skip your December payment.</p>
     </div>
     <div class="guar">
       <b>Same bill date. Same amount. Honored for 6 months.</b>
-      <span>Your billing date and monthly price stay exactly as they are today. Your first Uptown payment is in January, on your usual billing date.</span>
+      <span>Your first Uptown payment is in January, on your usual billing date.</span>
     </div>
   </section>
 
   <section>
     <h2>How it works</h2>
     <ol class="steps">
-      <li><div class="num">1</div><div><b>Tap "Count me in"</b><span>We already have your info, so there's nothing to fill out.</span></div></li>
-      <li><div class="num">2</div><div><b>Save your card in Mindbody</b><span>Sign in with the Mindbody login you already use and save a card to your Uptown profile. Nothing is charged now.</span></div></li>
-      <li><div class="num">3</div><div><b>We finish your setup</b><span>The Uptown team sets up your membership with your current plan, price and billing date. Your first payment is in January.</span></div></li>
-      <li><div class="num">4</div><div><b>Start training in December</b><span>Once your card is saved and your membership is set up, your Uptown access is activated for December.</span></div></li>
+      <li><div class="num">1</div><div><b>Tap "Count me in"</b><span>We already have your info.</span></div></li>
+      <li><div class="num">2</div><div><b>Save your card in Mindbody</b><span>Use the Mindbody login you already have. Nothing is charged now.</span></div></li>
+      <li><div class="num">3</div><div><b>Train in December</b><span>We set up your membership at your current rate and activate your access.</span></div></li>
     </ol>
   </section>
 
   <section>
     <h2>Why you'll love Uptown</h2>
     <div class="perks">
-      <div class="perk"><b>The same great workouts</b><span>The high-energy, team-based F45 training you love, with the same 45 minutes of results-driven work.</span></div>
-      <div class="perk"><b>A bigger community</b><span>More people in your corner. More faces to push you, cheer you on and celebrate your wins.</span></div>
+      <div class="perk"><b>The same great workouts</b><span>The high-energy, team-based F45 training you love.</span></div>
+      <div class="perk"><b>A bigger community</b><span>More people in your corner to push you and celebrate your wins.</span></div>
       <div class="perk"><b>More class times</b><span>More options throughout the day, so it's easier to train when it works for you.</span></div>
-      <div class="perk"><b>Keep your momentum</b><span>Same rate, same bill date, no new forms. Just keep showing up and keep getting stronger.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where &amp; when</h2>
+    <div class="where">
+      <a href="https://maps.google.com/maps?cid=17857468885662297047" target="_blank" rel="noopener"><div class="ic">&#128205;</div><div><b>6210 N 7th Street, Phoenix</b><span>Open in Google Maps</span></div></a>
+      <a href="https://clients.mindbodyonline.com/classic/ws?studioid=5721505&amp;stype=-7&amp;sView=week&amp;sLoc=0" target="_blank" rel="noopener"><div class="ic">&#128197;</div><div><b>See the class schedule</b><span>This week's classes at Uptown</span></div></a>
+      <div class="i"><div class="ic">&#128222;</div><div><b>(602) 922-3535</b><span>Questions? Call or text the studio.</span></div></div>
     </div>
   </section>
 
   <div class="final">
     <button class="cta go" type="button">Count me in</button>
     <div class="sub">Claim your spot by December 1.</div>
-    <div class="manual" id="manual">
-      <div style="font-weight:700">Let us know who you are so we can find you:</div>
-      <label for="name">Full name</label><input id="name" autocomplete="name">
-      <label for="contact">Phone or email</label><input id="contact" autocomplete="tel email">
-      <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-    </div>
-    <div class="err" id="err">Something went wrong. Please try again in a moment.</div>
-    <p class="fine">Tapping "Count me in" asks F45 Uptown Phoenix to set up your membership. The card you save in Mindbody will be used for your membership payments starting in January, at your current rate and billing date. No payment is taken on this page or when you save your card.</p>
+    <p class="fine">Tapping "Count me in" asks F45 Uptown Phoenix to set up your membership. The card you save in Mindbody will be charged starting in January at your current rate and billing date. Nothing is charged now.</p>
   </div>
 </div>
 
@@ -163,10 +183,9 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
   <h2>You're in<span id="fname2"></span>!</h2>
   <p class="lede">Welcome to the Uptown family. One last step: save your card in Mindbody so we can set up your membership. Nothing is charged now.</p>
   <a class="cta" id="mbo" href="https://clients.mindbodyonline.com/classic/ws?studioid=5721505&amp;stype=-2&amp;subTab=info" target="_blank" rel="noopener">Save my card in Mindbody</a>
-  <div class="sub" style="color:var(--muted)">Sign in with the Mindbody login you already use.</div>
+  <div class="sub" style="color:var(--muted)">Sign in with the Mindbody login you already use. Questions? (602) 922-3535</div>
 </div>
 </main>
-
 <script>
 var WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27560478/45dao6o/";
 var q = new URLSearchParams(location.search);
@@ -179,7 +198,7 @@ function send() {
   var err = document.getElementById("err"); err.style.display = "none";
   if (document.getElementById("website").value) return;
   var name = document.getElementById("name").value.trim(), contact = document.getElementById("contact").value.trim();
-  if (!known && (!name || !contact)) { err.textContent = "Please add your name and a phone or email so we can find you."; err.style.display = "block"; document.getElementById("manual").scrollIntoView({behavior:"smooth",block:"center"}); return; }
+  if (!known && (!name || !contact)) { err.textContent = "Please add your name and a phone or email so we can find you."; err.style.display = "block"; document.getElementById("name").focus(); return; }
   var btns = document.querySelectorAll(".go");
   btns.forEach(function (b) { b.disabled = true; b.textContent = "Sending..."; });
   var body = new URLSearchParams({ midtown_id: mid, first_name: first, name: name, contact: contact, submitted_at: new Date().toISOString(), source: "midtown-to-uptown" });
@@ -191,11 +210,15 @@ document.querySelectorAll(".go").forEach(function (b) { b.addEventListener("clic
 </script>
 <script>
 (function(){
-  var tag = document.createElement("script"); tag.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(tag);
+  var c = navigator.connection || {};
+  if (c.saveData || /2g/.test(c.effectiveType || "")) return;
+  window.addEventListener("load", function(){ setTimeout(function(){
+    var tag = document.createElement("script"); tag.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(tag);
+  }, 600); });
   window.onYouTubeIframeAPIReady = function(){
     new YT.Player("heroYtPlayer", { videoId: "aN_h1DtvnQw",
       playerVars: { autoplay: 1, mute: 1, controls: 0, modestbranding: 1, playsinline: 1, rel: 0, iv_load_policy: 3, disablekb: 1, fs: 0, start: 46, end: 55 },
-      events: { onReady: function(e){ e.target.mute(); e.target.playVideo(); },
+      events: { onReady: function(e){ e.target.mute(); e.target.playVideo(); document.getElementById("hv").classList.remove("off"); },
         onStateChange: function(e){ if (e.data === YT.PlayerState.ENDED) { e.target.seekTo(46, true); e.target.playVideo(); } } } });
   };
 })();
