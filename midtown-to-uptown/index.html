@@ -69,6 +69,7 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
 .rating b{font-family:var(--display);font-size:1.9rem;font-weight:400;line-height:1}
 .rating span{color:var(--muted);font-size:.92rem}
 .rating u{color:var(--red);font-weight:700;text-decoration:none;font-size:.92rem}
+.foot{border-top:1px solid var(--line);padding:16px 0 28px;text-align:center;color:var(--muted);font-size:.85rem}.foot a{color:var(--navy);font-weight:700;text-decoration:none}
 .hp{position:absolute;left:-9999px}
 
 .strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
@@ -167,7 +168,7 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
     <div class="where">
       <a href="https://maps.google.com/maps?cid=17857468885662297047" target="_blank" rel="noopener"><div class="ic">&#128205;</div><div><b>6210 N 7th Street, Phoenix</b><span>Open in Google Maps</span></div></a>
       <a href="https://clients.mindbodyonline.com/classic/ws?studioid=5721505&amp;stype=-7&amp;sView=week&amp;sLoc=0" target="_blank" rel="noopener"><div class="ic">&#128197;</div><div><b>See the class schedule</b><span>This week's classes at Uptown</span></div></a>
-      <div class="i"><div class="ic">&#128222;</div><div><b>(602) 922-3535</b><span>Questions? Call or text the studio.</span></div></div>
+      <a href="tel:+16029223535"><div class="ic">&#128222;</div><div><b>(602) 922-3535</b><span>Questions? Tap to call the studio.</span></div></a>
     </div>
   </section>
 
@@ -183,9 +184,10 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
   <h2>You're in<span id="fname2"></span>!</h2>
   <p class="lede">Welcome to the Uptown family. One last step: save your card in Mindbody so we can set up your membership. Nothing is charged now.</p>
   <a class="cta" id="mbo" href="https://clients.mindbodyonline.com/classic/ws?studioid=5721505&amp;stype=-2&amp;subTab=info" target="_blank" rel="noopener">Save my card in Mindbody</a>
-  <div class="sub" style="color:var(--muted)">Sign in with the Mindbody login you already use. Questions? (602) 922-3535</div>
+  <div class="sub" style="color:var(--muted)">Sign in with the Mindbody login you already use. Questions? <a href="tel:+16029223535" style="color:var(--navy);font-weight:700">(602) 922-3535</a></div>
 </div>
 </main>
+<footer class="foot"><div class="wrap">Questions? Call F45 Uptown Phoenix at <a href="tel:+16029223535">(602) 922-3535</a></div></footer>
 <script>
 var WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27560478/45dao6o/";
 var q = new URLSearchParams(location.search);
