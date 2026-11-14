@@ -70,6 +70,13 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
 .rating span{color:var(--muted);font-size:.92rem}
 .rating u{color:var(--red);font-weight:700;text-decoration:none;font-size:.92rem}
 .foot{border-top:1px solid var(--line);padding:16px 0 28px;text-align:center;color:var(--muted);font-size:.85rem}.foot a{color:var(--navy);font-weight:700;text-decoration:none}
+.mini{text-align:left;max-width:440px;margin:0 auto 20px;padding-left:22px;color:var(--ink)}
+.mini li{margin:0 0 8px}
+.alt{margin-top:22px}
+.alt p{margin:0 0 8px;color:var(--muted);font-size:.92rem}
+.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy);border-radius:10px;padding:13px 18px;font-family:var(--font);font-weight:800;font-size:.95rem;cursor:pointer}
+.ghost:disabled{opacity:.6}
+.altdone{display:none;margin-top:18px;background:var(--soft);border-radius:12px;padding:14px;font-weight:700}
 .hp{position:absolute;left:-9999px}
 
 .strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
@@ -183,8 +190,18 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
   <div class="check">&#10003;</div>
   <h2>You're in<span id="fname2"></span>!</h2>
   <p class="lede">Welcome to the Uptown family. One last step: save your card in Mindbody so we can set up your membership. Nothing is charged now.</p>
+  <ol class="mini">
+    <li><b>Tap the button below</b> to open Uptown in Mindbody.</li>
+    <li><b>Sign in</b> with the Mindbody login you already use.</li>
+    <li><b>Find the billing info section</b> on your profile, add your card and tap Save.</li>
+  </ol>
   <a class="cta" id="mbo" href="https://clients.mindbodyonline.com/classic/ws?studioid=5721505&amp;stype=-2&amp;subTab=info" target="_blank" rel="noopener">Save my card in Mindbody</a>
-  <div class="sub" style="color:var(--muted)">Sign in with the Mindbody login you already use. Questions? <a href="tel:+16029223535" style="color:var(--navy);font-weight:700">(602) 922-3535</a></div>
+  <div class="alt" id="alt">
+    <p>Prefer not to enter it online?</p>
+    <button class="ghost" id="callme" type="button">Have the Uptown team call me</button>
+  </div>
+  <div class="altdone" id="altdone">Got it! An Uptown team member will call you to finish setup.</div>
+  <div class="sub" style="color:var(--muted)">Questions? <a href="tel:+16029223535" style="color:var(--navy);font-weight:700">(602) 922-3535</a></div>
 </div>
 </main>
 <footer class="foot"><div class="wrap">Questions? Call F45 Uptown Phoenix at <a href="tel:+16029223535">(602) 922-3535</a></div></footer>
@@ -209,6 +226,16 @@ function send() {
     .catch(function () { btns.forEach(function (b) { b.disabled = false; b.textContent = "Count me in"; }); err.textContent = "Something went wrong. Please try again in a moment."; err.style.display = "block"; });
 }
 document.querySelectorAll(".go").forEach(function (b) { b.addEventListener("click", send); });
+document.getElementById("callme").addEventListener("click", function () {
+  var b = this; b.disabled = true; b.textContent = "Sending...";
+  var body = new URLSearchParams({ midtown_id: mid, first_name: first,
+    name: document.getElementById("name").value.trim(), contact: document.getElementById("contact").value.trim(),
+    submitted_at: new Date().toISOString(), source: "midtown-to-uptown-CALL-ME" });
+  fetch(WEBHOOK_URL, { method: "POST", body: body, mode: "no-cors" })
+    .then(function () { document.getElementById("alt").style.display = "none"; document.getElementById("altdone").style.display = "block"; })
+    .catch(function () { b.disabled = false; b.textContent = "Have the Uptown team call me"; });
+});
+
 </script>
 <script>
 (function(){
