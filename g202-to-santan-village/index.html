@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Welcome, Gilbert &amp; the 202 | F45 Training Santan Village</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#211551">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600;700;800;900&display=swap">
+<style>
+:root{--navy:#211551;--red:#A6192E;--bright:#FF3B30;--paper:#FFFFFF;--soft:#F5F4FA;--ink:#211551;--muted:#5B567A;--line:#E6E3EF;
+--display:"Bebas Neue",Impact,"Montserrat",sans-serif;--font:"Montserrat","Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px}
+.top{background:#fff;border-bottom:3px solid var(--red)}
+.top .wrap{display:flex;flex-direction:column;align-items:center;gap:8px;padding-block:20px}
+.top .f45logo{height:70px;width:auto}
+.studio-tag{font-family:var(--display);font-size:1.35rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.hero{position:relative;overflow:hidden;isolation:isolate;border-radius:20px;padding:40px 22px;min-height:440px;display:flex;align-items:center;margin-top:20px}
+.hero-video{position:absolute;inset:0;overflow:hidden;z-index:0;background:var(--navy)}
+#heroYtPlayer{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-width:177.78vh;min-height:100vh;transform:translate(-50%,-50%);border:0;pointer-events:none}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(33,21,81,.84),rgba(33,21,81,.74) 45%,rgba(33,21,81,.94))}
+.hero-in{position:relative;z-index:2;width:100%}
+.eyebrow{margin:0 0 10px;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bright)}
+h1{margin:0 0 14px;font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,10vw,4.2rem);line-height:.95;color:#fff;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--bright)}
+.lede{margin:0 0 22px;color:#EDEBF7;font-size:1.05rem}
+.cta{display:flex;width:100%;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;font-family:var(--font);font-weight:800;font-size:1.1rem;text-transform:uppercase;padding:19px 24px;border-radius:10px;letter-spacing:.04em;border:0;cursor:pointer;box-shadow:0 10px 22px rgba(166,25,46,.35)}
+.cta::after{content:"\2192";font-size:1.25em}
+.cta:disabled{opacity:.7}
+.sub{color:#D9D6EA;font-size:.88rem;text-align:center;margin-top:10px}
+section{padding:34px 0 0}
+h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.02em;text-transform:uppercase;margin:0 0 14px;color:var(--navy)}
+.gift{background:var(--navy);color:#fff;border-radius:16px;padding:24px;border-left:6px solid var(--red)}
+.gift .big{font-family:var(--display);font-size:2.4rem;line-height:1;margin-bottom:8px}
+.gift p{margin:0;color:#EDEBF7}
+.guar{margin-top:14px;background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.guar b{display:block;font-weight:800;margin-bottom:4px}
+.guar span{color:var(--muted);font-size:.95rem}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:flex;gap:14px;margin:0 0 16px}
+.num{flex:0 0 36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.95rem}
+.perks{display:grid;gap:12px}
+.perk{border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.perk b{display:block}
+.perk span{color:var(--muted);font-size:.95rem}
+.final{padding:34px 0 50px}
+.final .sub{color:var(--muted)}
+.fine{color:var(--muted);font-size:.78rem;text-align:center;margin-top:16px}
+.manual{display:none;background:var(--soft);border-radius:14px;padding:16px;margin-top:16px}
+.manual label{display:block;font-size:.9rem;font-weight:700;margin:10px 0 6px}
+.manual input{width:100%;padding:14px;border-radius:10px;border:1px solid var(--line);font-size:16px;font-family:var(--font)}
+.err{color:var(--red);font-size:.9rem;margin-top:10px;display:none;text-align:center}
+.done{display:none;text-align:center;padding:40px 0 60px}
+.check{width:76px;height:76px;border-radius:50%;background:var(--navy);color:#fff;font-size:42px;font-weight:900;display:grid;place-items:center;margin:0 auto 16px;border:4px solid var(--red)}
+.done h2{font-size:2.6rem}
+.done .lede{color:var(--muted)}
+.rating{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:16px;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;text-decoration:none;color:var(--ink)}
+.stars{color:#F5B301;font-size:1.35rem;letter-spacing:2px;line-height:1}
+.rating b{font-family:var(--display);font-size:1.9rem;font-weight:400;line-height:1}
+.rating span{color:var(--muted);font-size:.92rem}
+.rating u{color:var(--red);font-weight:700;text-decoration:none;font-size:.92rem}
+.foot{border-top:1px solid var(--line);padding:16px 0 28px;text-align:center;color:var(--muted);font-size:.85rem}.foot a{color:var(--navy);font-weight:700;text-decoration:none}
+.mini{text-align:left;max-width:440px;margin:0 auto 20px;padding-left:22px;color:var(--ink)}
+.mini li{margin:0 0 8px}
+.alt{margin-top:22px}
+.alt p{margin:0 0 8px;color:var(--muted);font-size:.92rem}
+.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy);border-radius:10px;padding:13px 18px;font-family:var(--font);font-weight:800;font-size:.95rem;cursor:pointer}
+.ghost:disabled{opacity:.6}
+.altdone{display:none;margin-top:18px;background:var(--soft);border-radius:12px;padding:14px;font-weight:700}
+.hp{position:absolute;left:-9999px}
+
+.strip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.strip span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-weight:700;font-size:.85rem;padding:7px 11px;border-radius:999px}
+.hero .manual{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+.hero .manual label{display:block;color:#fff;font-size:.85rem;font-weight:700;margin:8px 0 5px}
+.hero .manual input{width:100%;padding:13px;border-radius:9px;border:0;font-size:16px;font-family:var(--font)}
+.hero .err{color:#FFD0D0}
+.where{display:grid;gap:10px}
+.where a,.where div.i{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.where .ic{flex:0 0 38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:18px}
+.where b{display:block}
+.where span{color:var(--muted);font-size:.92rem}
+.hero-video.off #heroYtPlayer{display:none}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<svg class="f45logo" width="163" height="68" viewBox="0 0 163 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M30.1489 19.7541H0V25.4183H30.1489V19.7541Z" fill="#211551"/>
+<path d="M162.086 19.7541H131.937V25.4183H162.086V19.7541Z" fill="#211551"/>
+<path d="M0 27.9809V31.0937L30.1489 31.2798V27.9809H0Z" fill="#D6001C"/>
+<path d="M131.937 27.9809V31.0937L162.086 31.2798V27.9809H131.937Z" fill="#D6001C"/>
+<path d="M81.0365 21.5531H70.7641L81.1255 14.8088L81.0365 21.5531ZM124.661 28.7412C124.474 24.6612 122.2 21.4624 117.855 21.4608H101.649V16.0781H124.682V7.85773H93.1332V21.5531H89.505L89.5193 7.85932H79.0672L56.9368 21.5531H45.7848V16.0781H58.9553L72.4454 7.85773H37.4324V42.1614H45.7832V29.7655H57.4299V29.7735H81.1255V42.1423H89.5941V29.7735H116.314V33.3222H93.208V42.1407H117.855C122.317 42.1407 124.672 38.7335 124.672 34.547L124.661 28.7396V28.7412ZM29.5731 0V49.9873H53.6441V37.6296H73.2678V50H117.856C126.36 50 132.532 43.4991 132.532 34.5406L132.541 0H29.5731ZM128.231 4.30903V19.6284H123.678C126.344 21.4481 128.024 24.6071 128.207 28.5773L128.21 28.6553L128.221 34.5406C128.221 41.1099 123.957 45.691 117.855 45.691H77.5752V33.3206H54.0545V33.3158H49.3351V45.7117H33.8805V4.30903H128.232H128.231Z" fill="#211551"/>
+<path d="M31.9389 67.7692V59.033H29V56.2308H37.62V59.033H34.667V67.7692H31.9389Z" fill="#211551"/>
+<path d="M43.3172 67.7692V56.2308H47.9717C49.4764 56.2308 50.5169 56.6923 51.1779 57.467C51.7544 58.1429 52.0497 59.0165 52.0497 60.1538V60.1868C52.0497 61.967 51.2482 63.1374 50.0248 63.7473L52.3731 67.7692H49.2373L47.2546 64.2747H46.0453V67.7692H43.3172ZM46.0453 61.7692H47.8592C48.7733 61.7692 49.3217 61.2418 49.3217 60.4011V60.3681C49.3217 59.4451 48.7451 58.9835 47.8452 58.9835H46.0453V61.7692Z" fill="#211551"/>
+<path d="M56.9721 67.7692L61.1485 56.1484H63.7781L67.9686 67.7692H65.0437L64.3406 65.6923H60.5298L59.8267 67.7692H56.9721ZM61.3313 63.2033H63.5391L62.4422 59.9396L61.3313 63.2033Z" fill="#211551"/>
+<path d="M73.4938 67.7692V56.2308H76.2218V67.7692H73.4938Z" fill="#211551"/>
+<path d="M82.5236 67.7692V56.2308H85.0689L89.1187 62.3297V56.2308H91.8186V67.7692H89.4421L85.2235 61.4396V67.7692H82.5236Z" fill="#211551"/>
+<path d="M98.1346 67.7692V56.2308H100.863V67.7692H98.1346Z" fill="#211551"/>
+<path d="M107.164 67.7692V56.2308H109.71L113.759 62.3297V56.2308H116.459V67.7692H114.083L109.864 61.4396V67.7692H107.164Z" fill="#211551"/>
+<path d="M127.725 68C124.66 68 122.382 65.5275 122.382 62.033V62C122.382 58.6374 124.632 56 127.669 56C129.399 56 130.622 56.6099 131.663 57.6648L130.059 59.9396C129.356 59.2473 128.667 58.8516 127.683 58.8516C126.263 58.8516 125.166 60.2363 125.166 62V62.033C125.166 63.9121 126.277 65.2473 127.838 65.2473C128.513 65.2473 129.019 65.0824 129.413 64.7692V63.3681H127.486V61.0275H132V66.2033C130.959 67.2253 129.525 68 127.725 68Z" fill="#211551"/>
+</svg>
+<div class="studio-tag">Santan Village</div>
+</div></header>
+
+<main class="wrap">
+<div id="main">
+  <div class="hero">
+    <div class="hero-video off" id="hv" aria-hidden="true"><div id="heroYtPlayer"></div></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-in">
+      <p class="eyebrow">Gilbert &amp; the 202 members, you're invited</p>
+      <h1>Hey <em id="fname">there</em>, your next level starts at Santan Village.</h1>
+      <div class="strip"><span>Same rate &amp; bill date for 6 months</span><span>No new forms</span><span>Join by Dec 19</span></div>
+      <p class="lede">Same great F45 workouts, same rate, same bill date. Your spot at F45 Santan Village is ready, and joining takes one tap.</p>
+      <div class="manual" id="manual">
+        <label for="name">Your name</label><input id="name" autocomplete="name">
+        <label for="contact">Phone or email</label><input id="contact" autocomplete="tel email">
+        <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
+      <button class="cta go" type="button">Count me in</button>
+      <div class="err" id="err"></div>
+      <div class="sub">Takes 2 minutes. No charge until January.</div>
+    </div>
+  </div>
+
+  <a class="rating" href="https://maps.google.com/maps?cid=2066337506390407870" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 on Google from 75+ reviews. Read reviews on Google.">
+    <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    <b>4.9</b>
+    <span>on Google from 75+ reviews</span>
+    <u>Read reviews &rarr;</u>
+  </a>
+
+  <section>
+    <div class="gift">
+      <div class="big">Same bill date. Same rate. Honored for 6 months.</div>
+      <p>Your billing date and monthly rate stay exactly as they are today. Join by <strong>December 19</strong>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><div class="num">1</div><div><b>Tap "Count me in"</b><span>We already have your info.</span></div></li>
+      <li><div class="num">2</div><div><b>Save your card in Mindbody</b><span>Use the Mindbody login you already have. Nothing is charged now.</span></div></li>
+      <li><div class="num">3</div><div><b>Keep training at Santan Village</b><span>We set up your membership at your current rate and bill date and activate your access.</span></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Why you'll love Santan Village</h2>
+    <div class="perks">
+      <div class="perk"><b>The same great workouts</b><span>The high-energy, team-based F45 training you love.</span></div>
+      <div class="perk"><b>A community that shows up</b><span>People in your corner to push you and celebrate your wins.</span></div>
+      <div class="perk"><b>Keep your momentum</b><span>Same rate, same bill date, no new forms. Just keep showing up and keep getting stronger.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where &amp; when</h2>
+    <div class="where">
+      <a href="https://maps.google.com/maps?cid=2066337506390407870" target="_blank" rel="noopener"><div class="ic">&#128205;</div><div><b>2810 S Market Street, Unit 101, Gilbert</b><span>Open in Google Maps</span></div></a>
+      <a href="SANTAN_SCHEDULE_LINK" target="_blank" rel="noopener"><div class="ic">&#128197;</div><div><b>See the class schedule</b><span>This week's classes at Santan Village</span></div></a>
+      <a href="tel:+14807163590"><div class="ic">&#128222;</div><div><b>(480) 716-3590</b><span>Questions? Tap to call the studio.</span></div></a>
+    </div>
+  </section>
+
+  <div class="final">
+    <button class="cta go" type="button">Count me in</button>
+    <div class="sub">Claim your spot by December 19.</div>
+    <p class="fine">Tapping "Count me in" asks F45 Santan Village to set up your membership. The card you save in Mindbody will be charged at your current rate on your usual billing date. Nothing is charged now.</p>
+  </div>
+</div>
+
+<div class="done" id="done">
+  <div class="check">&#10003;</div>
+  <h2>You're in<span id="fname2"></span>!</h2>
+  <p class="lede">Welcome to the Santan Village family. One last step: save your card in Mindbody so we can set up your membership. Nothing is charged now.</p>
+  <ol class="mini">
+    <li><b>Tap the button below</b> to open Santan Village in Mindbody.</li>
+    <li><b>Sign in</b> with the Mindbody login you already use.</li>
+    <li><b>Find the billing info section</b> on your profile, add your card and tap Save.</li>
+  </ol>
+  <a class="cta" id="mbo" href="SANTAN_MYINFO_LINK" target="_blank" rel="noopener">Save my card in Mindbody</a>
+  <div class="alt" id="alt">
+    <p>Prefer not to enter it online?</p>
+    <button class="ghost" id="callme" type="button">Have the Santan Village team call me</button>
+  </div>
+  <div class="altdone" id="altdone">Got it! A Santan Village team member will call you to finish setup.</div>
+  <div class="sub" style="color:var(--muted)">Questions? <a href="tel:+14807163590" style="color:var(--navy);font-weight:700">(480) 716-3590</a></div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">Questions? Call F45 Santan Village at <a href="tel:+14807163590">(480) 716-3590</a></div></footer>
+<script>
+var WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27560478/45demfr/";
+var q = new URLSearchParams(location.search);
+var first = (q.get("n") || "").replace(/[^\p{L}' -]/gu, "").slice(0, 40);
+var mid = (q.get("id") || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 40);
+if (first) { document.getElementById("fname").textContent = first; document.getElementById("fname2").textContent = ", " + first; }
+var known = !!mid;
+if (!known) document.getElementById("manual").style.display = "block";
+function send() {
+  var err = document.getElementById("err"); err.style.display = "none";
+  if (document.getElementById("website").value) return;
+  var name = document.getElementById("name").value.trim(), contact = document.getElementById("contact").value.trim();
+  if (!known && (!name || !contact)) { err.textContent = "Please add your name and a phone or email so we can find you."; err.style.display = "block"; document.getElementById("name").focus(); return; }
+  var btns = document.querySelectorAll(".go");
+  btns.forEach(function (b) { b.disabled = true; b.textContent = "Sending..."; });
+  var body = new URLSearchParams({ g202_id: mid, first_name: first, name: name, contact: contact, submitted_at: new Date().toISOString(), source: "g202-to-santan" });
+  fetch(WEBHOOK_URL, { method: "POST", body: body, mode: "no-cors" })
+    .then(function () { document.getElementById("main").style.display = "none"; document.getElementById("done").style.display = "block"; window.scrollTo(0, 0); })
+    .catch(function () { btns.forEach(function (b) { b.disabled = false; b.textContent = "Count me in"; }); err.textContent = "Something went wrong. Please try again in a moment."; err.style.display = "block"; });
+}
+document.querySelectorAll(".go").forEach(function (b) { b.addEventListener("click", send); });
+document.getElementById("callme").addEventListener("click", function () {
+  var b = this; b.disabled = true; b.textContent = "Sending...";
+  var body = new URLSearchParams({ g202_id: mid, first_name: first,
+    name: document.getElementById("name").value.trim(), contact: document.getElementById("contact").value.trim(),
+    submitted_at: new Date().toISOString(), source: "g202-to-santan-CALL-ME" });
+  fetch(WEBHOOK_URL, { method: "POST", body: body, mode: "no-cors" })
+    .then(function () { document.getElementById("alt").style.display = "none"; document.getElementById("altdone").style.display = "block"; })
+    .catch(function () { b.disabled = false; b.textContent = "Have the Santan Village team call me"; });
+});
+
+</script>
+<script>
+(function(){
+  var c = navigator.connection || {};
+  if (c.saveData || /2g/.test(c.effectiveType || "")) return;
+  window.addEventListener("load", function(){ setTimeout(function(){
+    var tag = document.createElement("script"); tag.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(tag);
+  }, 600); });
+  window.onYouTubeIframeAPIReady = function(){
+    new YT.Player("heroYtPlayer", { videoId: "aN_h1DtvnQw",
+      playerVars: { autoplay: 1, mute: 1, controls: 0, modestbranding: 1, playsinline: 1, rel: 0, iv_load_policy: 3, disablekb: 1, fs: 0, start: 46, end: 55 },
+      events: { onReady: function(e){ e.target.mute(); e.target.playVideo(); document.getElementById("hv").classList.remove("off"); },
+        onStateChange: function(e){ if (e.data === YT.PlayerState.ENDED) { e.target.seekTo(46, true); e.target.playVideo(); } } } });
+  };
+})();
+</script>
+</body>
+</html>
