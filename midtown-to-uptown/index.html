@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Your next chapter starts at F45 Uptown Phoenix</title>
+<style>
+  :root{--navy:#07142f;--blue:#1f5cff;--sky:#5fa2ff;--ink:#f5f8ff;--mute:#a9b7d6;--ok:#2ad39a;--card:#0e2048}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--navy);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .hero{padding:34px 22px 44px;background:radial-gradient(120% 90% at 85% 0%,#1f5cff 0%,#0b2c78 38%,var(--navy) 75%)}
+  .wrap{max-width:540px;margin:0 auto}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:13px;text-transform:uppercase;color:#cfe0ff}
+  .brand b{color:#fff}
+  h1{font-size:38px;line-height:1.08;margin:22px 0 14px;font-weight:850;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--sky)}
+  .lead{color:#dbe6ff;font-size:18px;margin:0 0 26px}
+  .pill{display:inline-block;background:#fff;color:var(--navy);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:99px;margin-bottom:16px}
+  .btn{display:block;width:100%;border:0;border-radius:14px;background:#fff;color:var(--navy);font-size:20px;font-weight:850;padding:19px;text-align:center;text-decoration:none;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .btn:disabled{opacity:.7}
+  .sub{color:#c3d3f5;font-size:14px;text-align:center;margin-top:12px}
+  section{padding:36px 22px 0}
+  h2{font-size:24px;margin:0 0 14px;letter-spacing:-.01em}
+  .gift{background:linear-gradient(135deg,#1f5cff,#3a7bff);border-radius:20px;padding:24px;box-shadow:0 14px 36px rgba(31,92,255,.35)}
+  .gift .big{font-size:30px;font-weight:850;line-height:1.1;margin-bottom:8px}
+  .gift p{margin:0;color:#e8f0ff}
+  .steps{list-style:none;margin:0;padding:0}
+  .steps li{display:flex;gap:14px;margin:0 0 16px;align-items:flex-start}
+  .num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--card);border:1px solid #2a4380;color:var(--sky);font-weight:800;display:grid;place-items:center}
+  .steps b{display:block}
+  .steps span{color:var(--mute);font-size:15px}
+  .perks{display:grid;gap:12px}
+  .perk{background:var(--card);border:1px solid #1d3570;border-radius:16px;padding:16px 18px}
+  .perk b{display:block;margin-bottom:2px}
+  .perk span{color:var(--mute);font-size:15px}
+  .final{padding:36px 22px 56px}
+  .fine{color:var(--mute);font-size:12.5px;text-align:center;margin-top:18px;line-height:1.5}
+  .manual{display:none;background:var(--card);border-radius:16px;padding:16px;margin-top:16px}
+  .manual label{display:block;font-size:14px;font-weight:700;margin:10px 0 6px}
+  .manual input{width:100%;padding:14px;border-radius:12px;border:1px solid #2a4380;background:#091a3d;color:#fff;font-size:16px}
+  .err{color:#ff9a9a;font-size:14px;margin-top:10px;display:none;text-align:center}
+  .done{display:none;text-align:center;padding:60px 22px}
+  .done .check{width:76px;height:76px;border-radius:50%;background:var(--ok);color:#06241a;font-size:44px;font-weight:900;display:grid;place-items:center;margin:0 auto 18px}
+  .done h2{font-size:30px}
+  .hp{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+
+<div id="main">
+  <header class="hero"><div class="wrap">
+    <div class="brand"><b>F45 Training</b> &nbsp;·&nbsp; Uptown Phoenix</div>
+    <div class="pill">A note for Midtown members</div>
+    <h1>Hey <em id="fname">there</em>, your workouts don't have to stop.</h1>
+    <p class="lead">We know the Midtown change is hard to hear. Uptown Phoenix is ready to welcome you, your routine and your goals, and we've made joining as easy as one tap.</p>
+    <button class="btn go" type="button">Yes, count me in</button>
+    <div class="sub">One tap. We already have your details.</div>
+  </div></header>
+
+  <section><div class="wrap">
+    <div class="gift">
+      <div class="pill" style="margin-bottom:12px">Welcome gift</div>
+      <div class="big">December is on us.</div>
+      <p>Join Uptown by <strong>December 1</strong> and we skip your December payment. It's on us.</p>
+    </div>
+    <div class="perk" style="margin-top:14px;border-color:#2f5fd0">
+      <b>Same bill date. Same amount. Honored for 6 months.</b>
+      <span>Your billing date and monthly price stay exactly as they are today. Your first Uptown payment is in January, on your usual billing date.</span>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><div class="num">1</div><div><b>Tap "Count me in"</b><span>That's your whole to-do list. We already have your info.</span></div></li>
+      <li><div class="num">2</div><div><b>We reach out to finish setup</b><span>An Uptown team member contacts you to confirm your updated billing info for January. We already have everything else, with your current plan, price and billing date.</span></div></li>
+      <li><div class="num">3</div><div><b>Start training in December</b><span>Once your billing info is confirmed, your Uptown access is activated and you're free to book classes in December.</span></div></li>
+    </ol>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>What you'll find at Uptown</h2>
+    <div class="perks">
+      <div class="perk"><b>The F45 workout you know</b><span>High-energy, team-based, 45-minute training led by coaches who'll know your name.</span></div>
+      <div class="perk"><b>A community that shows up</b><span>Training is better with people cheering you on, and Uptown has plenty of them.</span></div>
+      <div class="perk"><b>A smooth handoff</b><span>No new forms, no starting over. We're handling the transition for you.</span></div>
+    </div>
+  </div></section>
+
+  <div class="final"><div class="wrap">
+    <button class="btn go" type="button" style="background:var(--blue);color:#fff">Yes, count me in</button>
+    <div class="sub">Offer open through December 1.</div>
+    <div class="manual" id="manual">
+      <div style="font-weight:700">Let us know who you are so we can find you:</div>
+      <label for="name">Full name</label><input id="name" autocomplete="name">
+      <label for="contact">Phone or email</label><input id="contact" autocomplete="tel email">
+      <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </div>
+    <div class="err" id="err">Something went wrong. Please try again in a moment.</div>
+    <p class="fine">Tapping "Count me in" asks F45 Uptown Phoenix to contact you to confirm your billing info and activate your membership. No payment is taken on this page.</p>
+  </div></div>
+</div>
+
+<div class="done" id="done"><div class="wrap">
+  <div class="check">&#10003;</div>
+  <h2>You're in<span id="fname2"></span>!</h2>
+  <p class="lead" style="color:#cfe0ff">Thanks for choosing Uptown. Our team will reach out soon to finish your setup. We can't wait to see you.</p>
+</div></div>
+
+<script>
+// Set after the Zapier "Catch Hook" is created.
+var WEBHOOK_URL = "REPLACE_WITH_ZAPIER_CATCH_HOOK_URL";
+
+var q = new URLSearchParams(location.search);
+var first = (q.get("n") || "").replace(/[^\p{L}' -]/gu, "").slice(0, 40);
+var mid = (q.get("id") || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 40);
+if (first) {
+  document.getElementById("fname").textContent = first;
+  document.getElementById("fname2").textContent = ", " + first;
+}
+var known = !!mid; // personal link: we already know who this is
+if (!known) document.getElementById("manual").style.display = "block";
+
+function send() {
+  var err = document.getElementById("err"); err.style.display = "none";
+  if (document.getElementById("website").value) return;
+  var name = document.getElementById("name").value.trim();
+  var contact = document.getElementById("contact").value.trim();
+  if (!known && (!name || !contact)) {
+    err.textContent = "Please add your name and a phone or email so we can find you.";
+    err.style.display = "block"; return;
+  }
+  var btns = document.querySelectorAll(".go");
+  btns.forEach(function (b) { b.disabled = true; b.textContent = "Sending..."; });
+  var body = new URLSearchParams({
+    midtown_id: mid, first_name: first, name: name, contact: contact,
+    submitted_at: new Date().toISOString(), source: "midtown-to-uptown"
+  });
+  fetch(WEBHOOK_URL, { method: "POST", body: body, mode: "no-cors" })
+    .then(function () {
+      document.getElementById("main").style.display = "none";
+      document.getElementById("done").style.display = "block";
+      window.scrollTo(0, 0);
+    })
+    .catch(function () {
+      btns.forEach(function (b) { b.disabled = false; b.textContent = "Yes, count me in"; });
+      err.textContent = "Something went wrong. Please try again in a moment.";
+      err.style.display = "block";
+    });
+}
+document.querySelectorAll(".go").forEach(function (b) { b.addEventListener("click", send); });
+</script>
+</body>
+</html>
