@@ -91,6 +91,13 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
 .where b{display:block}
 .where span{color:var(--muted);font-size:.92rem}
 .hero-video.off #heroYtPlayer{display:none}
+.when{margin:14px 0 4px}.whenlbl{font-weight:700;font-size:15px;margin-bottom:8px;color:#fff}
+.whenopts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.whenopts label{cursor:pointer}.whenopts input{position:absolute;opacity:0;pointer-events:none}
+.whenopts span{display:block;text-align:center;padding:10px 4px;border:2px solid rgba(255,255,255,.55);border-radius:10px;font-weight:700;font-size:14px;background:rgba(255,255,255,.08);color:#fff}
+.whenopts small{display:block;font-weight:500;font-size:12px;opacity:.85}
+.whenopts input:checked+span{background:#fff;color:var(--navy);border-color:#fff}
+.whenopts input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
 </style>
 </head>
 <body>
@@ -128,9 +135,17 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
         <label for="contact">Phone or email</label><input id="contact" autocomplete="tel email">
         <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       </div>
+      <div class="when" role="radiogroup" aria-labelledby="whenlbl">
+        <div class="whenlbl" id="whenlbl">Best time for our membership manager to call you</div>
+        <div class="whenopts">
+          <label><input type="radio" name="bt" value="Morning (8am-12pm)"><span>Morning<small>8am-12pm</small></span></label>
+          <label><input type="radio" name="bt" value="Afternoon (12-4pm)"><span>Afternoon<small>12-4pm</small></span></label>
+          <label><input type="radio" name="bt" value="Evening (4-7pm)"><span>Evening<small>4-7pm</small></span></label>
+        </div>
+      </div>
       <button class="cta go" type="button">Count me in</button>
       <div class="err" id="err"></div>
-      <div class="sub">Takes 2 minutes. No charge until January.</div>
+      <div class="sub">Takes 1 minute. No charge until January.</div>
     </div>
   </div>
 
@@ -147,7 +162,7 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
       <p>Join by <strong>December 1</strong> and we skip your December payment.</p>
     </div>
     <div class="guar">
-      <b>Same bill date. Same amount. Honored for 6 months.</b>
+      <b>Same bill date. Same rate, plus applicable sales tax. Honored for 6 months.</b>
       <span>Your first Uptown payment is in January, on your usual billing date.</span>
     </div>
   </section>
@@ -155,9 +170,9 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
   <section>
     <h2>How it works</h2>
     <ol class="steps">
-      <li><div class="num">1</div><div><b>Tap "Count me in"</b><span>We already have your info.</span></div></li>
-      <li><div class="num">2</div><div><b>Save your card in Mindbody</b><span>Use the Mindbody login you already have. Nothing is charged now.</span></div></li>
-      <li><div class="num">3</div><div><b>Train in December</b><span>We set up your membership at your current rate and activate your access.</span></div></li>
+      <li><div class="num">1</div><div><b>Pick a time and tap "Count me in"</b><span>We already have your info.</span></div></li>
+      <li><div class="num">2</div><div><b>Take a quick call from our membership manager</b><span>A card on file is required to activate your membership and your free December. We'll put it on file over the phone. Nothing is charged now.</span></div></li>
+      <li><div class="num">3</div><div><b>Train free in December</b><span>We activate your studio access and December is on us. Your current rate (plus applicable sales tax) resumes in January on your usual billing date. Our late-cancel and no-show policies still apply.</span></div></li>
     </ol>
   </section>
 
@@ -182,25 +197,14 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
   <div class="final">
     <button class="cta go" type="button">Count me in</button>
     <div class="sub">Claim your spot by December 1.</div>
-    <p class="fine">Tapping "Count me in" asks F45 Uptown Phoenix to set up your membership. The card you save in Mindbody will be charged starting in January at your current rate and billing date. Nothing is charged now.</p>
+    <p class="fine">Tapping "Count me in" asks F45 Uptown Phoenix to call you and set up your membership. A card on file is required to activate your membership and your free December. Your card is charged starting in January at your current rate plus applicable sales tax, on your current billing date. Nothing is charged now. Studio late-cancel and no-show policies apply, including during December. Offer applies to Midtown members who join by December 1; standard Uptown rates apply after that.</p>
   </div>
 </div>
 
 <div class="done" id="done">
   <div class="check">&#10003;</div>
   <h2>You're in<span id="fname2"></span>!</h2>
-  <p class="lede">Welcome to the Uptown family. One last step: save your card in Mindbody so we can set up your membership. Nothing is charged now.</p>
-  <ol class="mini">
-    <li><b>Tap the button below</b> to open Uptown in Mindbody.</li>
-    <li><b>Sign in</b> with the Mindbody login you already use.</li>
-    <li><b>Find the billing info section</b> on your profile, add your card and tap Save.</li>
-  </ol>
-  <a class="cta" id="mbo" href="https://clients.mindbodyonline.com/classic/ws?studioid=5721505&amp;stype=-2&amp;subTab=info" target="_blank" rel="noopener">Save my card in Mindbody</a>
-  <div class="alt" id="alt">
-    <p>Prefer not to enter it online?</p>
-    <button class="ghost" id="callme" type="button">Have the Uptown team call me</button>
-  </div>
-  <div class="altdone" id="altdone">Got it! An Uptown team member will call you to finish setup.</div>
+  <p class="lede">Welcome to the Uptown family. Our membership manager will call you <b id="btdone">at the time you picked</b> to put your card on file and activate your studio access. A card on file is required for your free December. Nothing is charged now.</p>
   <div class="sub" style="color:var(--muted)">Questions? <a href="tel:+16029223535" style="color:var(--navy);font-weight:700">(602) 922-3535</a></div>
 </div>
 </main>
@@ -217,25 +221,17 @@ function send() {
   var err = document.getElementById("err"); err.style.display = "none";
   if (document.getElementById("website").value) return;
   var name = document.getElementById("name").value.trim(), contact = document.getElementById("contact").value.trim();
+  var bt = (document.querySelector('input[name=bt]:checked') || {}).value || "";
   if (!known && (!name || !contact)) { err.textContent = "Please add your name and a phone or email so we can find you."; err.style.display = "block"; document.getElementById("name").focus(); return; }
+  if (!bt) { err.textContent = "Please pick the best time for us to call you."; err.style.display = "block"; document.querySelector(".when").scrollIntoView({behavior:"smooth",block:"center"}); return; }
   var btns = document.querySelectorAll(".go");
   btns.forEach(function (b) { b.disabled = true; b.textContent = "Sending..."; });
-  var body = new URLSearchParams({ midtown_id: mid, first_name: first, name: name, contact: contact, submitted_at: new Date().toISOString(), source: "midtown-to-uptown" });
+  var body = new URLSearchParams({ midtown_id: mid, first_name: first, name: name, contact: contact, best_time: bt, submitted_at: new Date().toISOString(), source: "midtown-to-uptown" });
   fetch(WEBHOOK_URL, { method: "POST", body: body, mode: "no-cors" })
-    .then(function () { document.getElementById("main").style.display = "none"; document.getElementById("done").style.display = "block"; window.scrollTo(0, 0); })
+    .then(function () { document.getElementById("btdone").textContent = "in the " + bt.split(" (")[0].toLowerCase() + " (" + bt.split(" (")[1]; document.getElementById("main").style.display = "none"; document.getElementById("done").style.display = "block"; window.scrollTo(0, 0); })
     .catch(function () { btns.forEach(function (b) { b.disabled = false; b.textContent = "Count me in"; }); err.textContent = "Something went wrong. Please try again in a moment."; err.style.display = "block"; });
 }
 document.querySelectorAll(".go").forEach(function (b) { b.addEventListener("click", send); });
-document.getElementById("callme").addEventListener("click", function () {
-  var b = this; b.disabled = true; b.textContent = "Sending...";
-  var body = new URLSearchParams({ midtown_id: mid, first_name: first,
-    name: document.getElementById("name").value.trim(), contact: document.getElementById("contact").value.trim(),
-    submitted_at: new Date().toISOString(), source: "midtown-to-uptown-CALL-ME" });
-  fetch(WEBHOOK_URL, { method: "POST", body: body, mode: "no-cors" })
-    .then(function () { document.getElementById("alt").style.display = "none"; document.getElementById("altdone").style.display = "block"; })
-    .catch(function () { b.disabled = false; b.textContent = "Have the Uptown team call me"; });
-});
-
 </script>
 <script>
 (function(){
