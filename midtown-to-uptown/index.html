@@ -219,6 +219,7 @@ h2{font-family:var(--display);font-weight:400;font-size:2.1rem;letter-spacing:.0
 <footer class="foot"><div class="wrap">Questions? Call F45 Uptown Phoenix at <a href="tel:+16029223535">(602) 922-3535</a></div></footer>
 <script>
 var WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27560478/45dao6o/";
+var WEBHOOK_URL_NOID = "https://hooks.zapier.com/hooks/catch/27560478/45sdvvm/"; /* generic-link accepts: Zap matches by email */
 var q = new URLSearchParams(location.search);
 var first = (q.get("n") || "").replace(/[^\p{L}' -]/gu, "").slice(0, 40);
 var mid = (q.get("id") || "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 40);
@@ -235,7 +236,7 @@ function send() {
   var btns = document.querySelectorAll(".go");
   btns.forEach(function (b) { b.disabled = true; b.textContent = "Sending..."; });
   var body = new URLSearchParams({ midtown_id: mid, first_name: first, name: name, contact: contact, best_time: bt, submitted_at: new Date().toISOString(), source: "midtown-to-uptown" });
-  fetch(WEBHOOK_URL, { method: "POST", body: body, mode: "no-cors" })
+  fetch(known ? WEBHOOK_URL : WEBHOOK_URL_NOID, { method: "POST", body: body, mode: "no-cors" })
     .then(function () { document.getElementById("btdone").textContent = "in the " + bt.split(" (")[0].toLowerCase() + " (" + bt.split(" (")[1]; document.getElementById("main").style.display = "none"; document.getElementById("done").style.display = "block"; window.scrollTo(0, 0); })
     .catch(function () { btns.forEach(function (b) { b.disabled = false; b.textContent = "Count me in"; }); err.textContent = "Something went wrong. Please try again in a moment."; err.style.display = "block"; });
 }
