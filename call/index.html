@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Calling…</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: #0b1f3a; color: #fff; text-align: center; }
+  main { padding: 32px 24px; max-width: 360px; width: 100%; }
+  h1 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+  p { font-size: 15px; line-height: 1.4; opacity: .8; margin: 0 0 24px; }
+  a.btn { display: block; padding: 16px; border-radius: 12px; background: #2f80ed; color: #fff;
+          font-size: 18px; font-weight: 600; text-decoration: none; margin-bottom: 12px; }
+  a.btn.secondary { background: transparent; border: 1px solid rgba(255,255,255,.35); font-size: 15px; font-weight: 500; }
+  .err { color: #ffb4b4; }
+  small { display: block; font-size: 12px; opacity: .55; margin-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title">Opening Quo…</h1>
+  <p id="msg">If Quo doesn't open by itself, tap the button.</p>
+  <a class="btn" id="call" href="#" hidden>Call in Quo</a>
+  <a class="btn secondary" id="dial" href="#" hidden>Open Quo dialer only</a>
+  <small>Calls go out from the studio's Quo number.</small>
+</main>
+<script>
+/*
+  Tap-to-call bridge: partners.pluultra.com/call/#n=<lead phone>&f=<studio Quo number>[&a=open]
+  The numbers ride in the URL fragment (after #), which browsers never send to the server.
+  n = number to call, f = Quo line to call from (both E.164, + may be written as %2B).
+  a=open opens the Quo dialer without auto-calling.
+*/
+(function () {
+  var params = new URLSearchParams(location.hash.replace(/^#/, ''));
+  function clean(v) {
+    if (!v) return '';
+    var digits = v.replace(/[^\d]/g, '');
+    if (digits.length === 10) digits = '1' + digits;   // US number without country code
+    return digits.length >= 11 && digits.length <= 15 ? '+' + digits : '';
+  }
+  var n = clean(params.get('n'));
+  var f = clean(params.get('f'));
+  var autoCall = params.get('a') !== 'open';
+
+  // Take the numbers out of the address bar and browser history.
+  try { history.replaceState(null, '', location.pathname); } catch (e) {}
+
+  if (!n || !f) {
+    document.getElementById('title').textContent = 'Link is missing a number';
+    document.getElementById('msg').textContent = 'This call link is incomplete. Open the lead in HighLevel and call from there.';
+    document.getElementById('msg').className = 'err';
+    return;
+  }
+
+  var base = 'openphone://dial?number=' + encodeURIComponent(n) + '&from=' + encodeURIComponent(f);
+  var callUrl = base + '&action=call';
+  var callBtn = document.getElementById('call');
+  var dialBtn = document.getElementById('dial');
+  callBtn.href = callUrl; callBtn.hidden = false;
+  dialBtn.href = base;   dialBtn.hidden = false;
+
+  location.href = autoCall ? callUrl : base;
+})();
+</script>
+</body>
+</html>
