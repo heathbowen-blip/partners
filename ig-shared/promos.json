@@ -1,0 +1,11 @@
+{
+  "_how_to_use": "One file controls the promo button on every studio's Instagram link page. Add an entry to show a button; it appears only between start and end (dates are inclusive, studio local time). studios: list of page slugs (e.g. \"chandler-north\") or \"all\". url: full link to the promo page. Remove the entry, or let it expire, to hide it.",
+  "_example": {
+    "label": "Friends & family week: bring a guest free",
+    "url": "https://partners.pluultra.com/example-promo/",
+    "studios": ["chandler-north"],
+    "start": "2026-12-01",
+    "end": "2026-12-07"
+  },
+  "promos": []
+}
