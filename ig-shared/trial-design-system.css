@@ -1,5 +1,5 @@
-/* Plu Ultra design-system pass: Gotham Narrow, true navy, square corners, one red (the buttons).
-   Loaded after the page's own styles; delete this file's <link> to undo. */
+/* Shared Plu Ultra design layer for ALL studio trial + thank-you pages: Gotham Narrow, true navy, square corners, one red (the buttons).
+   Load it after the page's own <style>. Edit here and every studio updates. */
 :root{--navy:#211551;--navy-deep:#211551;--cream:#f4f4f6}
 body,input,.btn,button{font-family:"Gotham Narrow","Arial Narrow",Arial,sans-serif!important}
 .display,h1,h2,.steps li::before{font-family:"Gotham Narrow","Arial Narrow",Arial,sans-serif!important;font-weight:900!important;text-transform:uppercase;letter-spacing:0!important;line-height:.9!important}
