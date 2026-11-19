@@ -1,0 +1,12 @@
+/* Plu Ultra design-system pass: Gotham Narrow, true navy, square corners, one red (the buttons).
+   Loaded after the page's own styles; delete this file's <link> to undo. */
+:root{--navy:#211551;--navy-deep:#211551;--cream:#f4f4f6}
+body,input,.btn,button{font-family:"Gotham Narrow","Arial Narrow",Arial,sans-serif!important}
+.display,h1,h2,.steps li::before{font-family:"Gotham Narrow","Arial Narrow",Arial,sans-serif!important;font-weight:900!important;text-transform:uppercase;letter-spacing:0!important;line-height:.9!important}
+*{border-radius:0!important}
+.kicker{background:transparent!important;padding:0 0 12px!important;letter-spacing:.24em!important;margin-bottom:20px!important;position:relative}
+.kicker::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:5px;background:#fff}
+.hero h1{font-size:60px!important;white-space:nowrap}
+h1 em{color:#fff!important}
+.btn{box-shadow:none!important;justify-content:space-between!important;font-weight:900!important;font-size:18px!important}
+.steps li::before{color:#fff!important}
