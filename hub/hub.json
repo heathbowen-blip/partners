@@ -1,0 +1,35 @@
+{
+  "_how_to_use": "One file runs every studio's Marketing Hub (partners.pluultra.com/hub/<slug>/). 'studios' holds each studio's own links. 'tools' are the always-on portals; {upload} and {studioName} are filled in per studio. 'items' are dated promos/assets: they show only between start and end (inclusive, studio local time) and only for the listed studio slugs (or \"all\"). Remove or let an item expire to hide it.",
+  "studios": {
+    "belmar": {
+      "name": "F45 Belmar",
+      "eventsName": "F45 Belmar",
+      "upload": "https://form.jotform.com/263226085361051",
+      "ig": "https://partners.pluultra.com/belmar-ig/",
+      "timeZone": "America/Denver"
+    }
+  },
+  "tools": [
+    {
+      "id": "upload",
+      "label": "Upload photos & videos",
+      "sub": "Workout shots, member milestones, HYROX. No sign-in.",
+      "url": "{upload}"
+    },
+    {
+      "id": "event",
+      "label": "Submit a studio event",
+      "sub": "Goes on the lobby TV, newsletter and link in bio.",
+      "url": "https://form.jotform.com/262885877035068?postTo=One%20studio&q5_dropdown3={studioName}"
+    }
+  ],
+  "items": [],
+  "_item_example": {
+    "label": "Feast to Beast: guest pass flyer",
+    "sub": "Print and post at the front desk",
+    "url": "https://partners.pluultra.com/example/",
+    "studios": ["belmar"],
+    "start": "2026-12-01",
+    "end": "2026-12-24"
+  }
+}
